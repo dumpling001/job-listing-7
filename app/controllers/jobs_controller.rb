@@ -2,7 +2,15 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   def index
-    @jobs = Job.where(:is_hidden => false).order("created_at DESC")
+    @jobs = case params[:order]
+      @jobs = case params[:order]
+              when 'by_lower_bound'
+                Job.published.order('wage_lower_bound DESC')
+              when 'by_upper_bound'
+                Job.published.order('wage_upper_bound DESC')
+              else
+                Job.published.recent
+              end
   end
 
   def show
@@ -10,7 +18,7 @@ class JobsController < ApplicationController
     if @job.is_hidden
       flash[:warning] = "This Job already archived"
       redirect_to root_path
-    end    
+    end
   end
 
   def new
