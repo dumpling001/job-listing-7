@@ -1,12 +1,14 @@
   <div class="jumbotron">
-    <h1 class="title">18K Offer</h1>
-    <p class="slogan">18K Offer 是一个提供18K薪水工作机会的求职网站。
-    <br>
-    我们希望藉由这个网站，能让大家找到且应征上高薪且优质的工作。
-    <br>
-     凭借自己的努力和天份也会变 Winner
-    </p>
-    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">马上应征</a></p>
+    <div class= "search">
+    <%= search_form_for @search do |f| %>
+      <%= f.label :title_cont %>
+      <%= f.search_field :title_cont %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+    <h1 class="title">Ruby高薪工作</h1>
+    <p class="slogan">Ruby高薪工作 是一个提供专业ruby工作机会的求职网站。</p>
+    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">查看所有工作机会</a></p>
   </div>
 
   <section id="company">

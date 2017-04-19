@@ -19,8 +19,8 @@
 @import "font-awesome";
 
 .jumbotron {
-  background-image:url('https://cdn.pixabay.com/photo/2016/10/17/09/30/target-1747234_960_720.jpg');
-  background-repeat: no-repeat;
+  position: relative;
+  background: asset-data-url("picture-3.jpg") no-repeat center center;
   background-size: cover;
   padding-bottom: 110px;
 }
