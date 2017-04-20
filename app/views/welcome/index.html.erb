@@ -5,8 +5,35 @@
       <%= f.search_field :title_cont %>
       <%= f.submit %>
     <% end %>
-  </div>
+    </div>
     <h1 class="title">Ruby高薪工作</h1>
     <p class="slogan">Ruby高薪工作 是一个提供专业ruby工作机会的求职网站。</p>
     <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">查看所有工作机会</a></p>
+  </div>
+
+  <div class="lp-section-2 clearfix">
+    <div class="content-2">
+      <div class="short-line"></div>
+      <h2>每一个Ruby工程师都是一位艺术家。</h2>
+      <table class="table table-boldered">
+        <thead>
+            <tr>
+                <td>
+                    职缺</td>
+                <td>薪资下限</td>
+                <td>薪资上限</td>
+                <td>刊登时间</td>
+            </tr>
+        </thead>
+        <tbody>
+        <% @jobs.each do |job| %>
+        <tr>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.created_at %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
   </div>

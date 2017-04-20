@@ -26,7 +26,7 @@
 }
 
 .title {
-    background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+    background-color: rgba(250, 250, 250, 0.68);//背景颜色含透明度
     max-width: 500px;//最大宽度
     margin-top: 200px;//和顶部拉开距离
     margin-bottom: 0;//这样就可以紧接息面的描述文字
@@ -45,7 +45,7 @@
        margin: 0;//上下左右margin为0
        font-size: 26px;//字体大小
        max-width: 500px;//最大宽度
-       background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+       background-color: rgba(250, 250, 250, 0.68);//背景颜色含透明度
        padding: 20px;//上下左右padding为20px
        text-align:left;//文字左对齐
        color: #222;//字体颜色
@@ -107,6 +107,16 @@
    .navbar {
      border-radius: 0; //圆角为0
    }
+
+   .lp-section-2 {
+       height: 520px;
+   }
+ }
+
+
+ .lp-section-2 .content-2 {
+     width: 100%;
+     padding: 30px 20px 0;
  }
 
   .navbar-default .navbar-brand {
@@ -161,7 +171,7 @@
 
   .container-fluid .jumbotron{
    padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-   margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+   margin: 0 -15px 0px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为0，会跟下面的内容连接
    border-radius: 0;//圆角为0
  }
 
@@ -290,3 +300,75 @@
   margin: 0px;
   border-radius: 0px;
 }
+
+.short-line{
+  display:block;
+  background:#1ecd97;
+  border-style:none;
+  border-radius:0;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+  z-index:53;
+  width:50px;
+  height:3px;
+  position:relative}
+
+.lp-section-2{
+  background-color:#f2f2f2;
+  height:550px;
+  margin: 0 -15px}
+
+.lp-section-2 .content-2{
+  padding-top:50px;
+  margin:0 auto;
+  width:690px;
+  text-align:center}
+
+.lp-section-2 .content-2 h2{
+  font-size:1.428em;
+  padding-bottom:20px;
+  letter-spacing:3px}
+
+.lp-section-2 .content-2 p{
+  line-height:34px;
+  color:#666;
+  padding:0 50px;
+  text-align:center}
+
+.lp-section-2 .content-2 img{
+  margin-top:50px;
+  width:660px;
+  height:auto;
+}
+
+.lp-section-2{
+  background-color:#f2f2f2;
+  height:510px}
+
+.lp-section-2 .content-2{
+  padding-top:10px;
+}
+
+  @media (max-width: 768px){
+    .lp-section-2{
+      height:520px}
+
+    .lp-section-2 .content-2{
+      width:100%;
+      padding:30px 20px 0}
+
+    .lp-section-2 .content-2 p{
+      line-height:30px;
+      padding:0 20px}
+
+    .lp-section-2 .content-2 img{
+      width:auto;
+      max-width:100%;
+      height:auto;
+     }
+  }
+
+  .clearfix:after{content:" ";display:table}
+  .clearfix:after{clear:both}
