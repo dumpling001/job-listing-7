@@ -11,6 +11,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>职业</h1>
+              <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
           </div>
         </div>
@@ -19,6 +20,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>专注</h1>
+              <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
           </div>
         </div>
@@ -27,8 +29,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>协作</h1>
-
-
+              <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
           </div>
         </div>
@@ -48,3 +49,34 @@ $('.carousel').carousel({
   interval: 2000
 })
 </script>
+
+<div class="container-fluid" >
+<table class="table table-boldered">
+  <thead>
+      <tr>
+          <td>
+              职缺</td>
+          <td>薪资下限</td>
+          <td>薪资上限</td>
+          <td>刊登时间</td>
+      </tr>
+  </thead>
+  <tbody>
+  <% @jobs.each do |job| %>
+  <tr>
+    <td>
+      <%= link_to(job.title, job_path(job)) %>
+    </td>
+    <td>
+        <%= job.wage_lower_bound %>
+    </td>
+    <td>
+        <%= job.wage_upper_bound %>
+    </td>
+    <td>
+      <%= job.created_at %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+</div>
