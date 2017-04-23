@@ -6,7 +6,7 @@ class JobsController < ApplicationController
     @jobs = @search.result.where(is_hidden: false)
 
     if params[:workplace].blank?
-      @jobs = Workplace.published.recent
+      @jobs = Job.published.recent
     else
       @workplace_id = Workplace.find_by(name: params[:workplace]).id
       @jobs = Job.where(:workplace_id => @workplace_id).recent
