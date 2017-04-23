@@ -4,17 +4,9 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-                    <%= sort_link @search, :wage_lower_bound, "薪资下限排序" %>
-        </li>
-        <li>
-                   <%= sort_link @search, :wage_upper_bound, "薪资上限排序" %>
-
-        </li>
-        <li>
-                    <%= sort_link @search, :created_at, "创建时间顺序" %>
-
-        </li>
+        <li><%= sort_link @search, :wage_lower_bound, "薪资下限排序" %></li>
+        <li><%= sort_link @search, :wage_upper_bound, "薪资上限排序" %></li>
+        <li><%= sort_link @search, :created_at, "创建时间顺序" %></li>
     </ul>
 </div>
 
@@ -31,18 +23,10 @@
   <tbody>
   <% @jobs.each do |job| %>
   <tr>
-    <td>
-      <%= link_to(job.title, job_path(job)) %>
-    </td>
-    <td>
-        <%= job.wage_lower_bound %>
-    </td>
-    <td>
-        <%= job.wage_upper_bound %>
-    </td>
-    <td>
-      <%= job.created_at %>
-    </td>
+    <td><%= link_to(job.title, job_path(job)) %></td>
+    <td><%= job.wage_lower_bound %></td>
+    <td><%= job.wage_upper_bound %></td>
+    <td><%= job.created_at %></td>
   </tr>
   <% end %>
 </table>
