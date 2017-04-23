@@ -5,6 +5,19 @@
       <a class="navbar-brand" href="/">Ruby高薪工作</a>
     </div>
 
+    <ul class="nav navbar-nav navbar-left">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">工作地点<span class="caret"></span></a>
+
+        <ul class="dropdown-menu" role="menu">
+          <% Workplace.all.each do |workplace| %>
+        <li>
+        <%= link_to workplace.name, jobs_path(workplace: workplace.name), class: "link" %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
 
     <div class="nav navbar-nav navbar-left">
     <%= form_tag search_jobs_path , :method => :get do %>
@@ -19,7 +32,6 @@
     </div>
     <% end %>
   </div>
-
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

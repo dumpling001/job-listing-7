@@ -7,7 +7,8 @@
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
 <%= f.input :contact_email %>
+<%= select_tag(:workplace_id, options_for_select(@workplaces), :prompt => "工作地点") %>
 <%= f.input :is_hidden %>
 
-  <%= f.submit "Submit" %>
+<%= f.submit "Submit" %>
 <% end %>

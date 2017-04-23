@@ -15,10 +15,12 @@ class Admin::JobsController < ApplicationController
 
     def new
       @job = Job.new
+      @workplaces = Workplace.all.map { |c| [c.name, c.id] } #这一行为加入的代码
     end
 
     def create
       @job = Job.new(job_params)
+      @job.workplace_id = params[:workplace_id]
 
       if @job.save
         redirect_to admin_jobs_path
@@ -29,6 +31,7 @@ class Admin::JobsController < ApplicationController
 
     def edit
       @job = Job.find(params[:id])
+      @workplaces = Workplace.all.map { |c| [c.name, c.id] } #这一行为加入的代码
     end
 
     def update
@@ -63,7 +66,7 @@ class Admin::JobsController < ApplicationController
     private
 
     def job_params
-      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+      params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :workplace_id)
     end
   end
 end
