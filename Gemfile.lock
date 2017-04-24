@@ -69,6 +69,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.2)
     concurrent-ruby (1.0.2-java)
+    cowsay (0.3.0)
     debug_inspector (0.0.2)
     devise (4.2.1)
       bcrypt (~> 3.0)
@@ -249,6 +250,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.2)
+  cowsay
   devise
   font-awesome-rails
   jbuilder (~> 2.5)
