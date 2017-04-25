@@ -50,38 +50,18 @@ $('.carousel').carousel({
 })
 </script>
 
-<div class="container-fluid" >
-  <div class="table-responsive">
-<table class="table table-hover">
-  <thead>
-      <tr>
-          <td>职缺</td>
-          <td>城市</td>
-          <td>薪资下限</td>
-          <td>薪资上限</td>
-          <td>刊登时间</td>
-      </tr>
-  </thead>
-  <tbody>
-  <% @jobs.each do |job| %>
-  <tr>
-    <td>
-      <%= link_to(job.title, job_path(job)) %>
-    </td>
-    <td>
-        <%= job.workplace.name %>
-    </td>
-    <td>
-        <%= job.wage_lower_bound %>
-    </td>
-    <td>
-        <%= job.wage_upper_bound %>
-    </td>
-    <td>
-      <%= job.created_at %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="city-item">
+  <div class="row">
+      <a href="#">
+        <img class="img-circle" src="<%= image_url 'beijing.jpg' %>" alt="北京">
+      </a>
+      <h1>北京</h1>
 </div>
+
+  <div class="row">
+      <a href="#">
+        <img class="img-circle" src="<%= image_url 'hangzhou.jpg' %>" alt="杭州">
+      </a>
+      <h1>杭州</h1>
+      </div>
 </div>

@@ -161,9 +161,9 @@
      /*filter: grayscale(90%); make all photos black and white */
     width: 100%; /* Set width to 100% */
     margin: auto;
-    opacity: 0.7;
-    -webkit-filter: contrast(180%);
-    filter: contrast(180%);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
 }
 
 .carousel-caption h3 {
@@ -174,4 +174,17 @@
     .carousel-caption {
         display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
     }
+}
+
+.city-item {
+  background-color: #f2f2f2;
+  margin: 0 -15px;
+}
+
+.city-item img {
+  margin: 50px 50px 10px 200px;
+}
+
+.city-item h1 {
+  margin-left: 235px;
 }
