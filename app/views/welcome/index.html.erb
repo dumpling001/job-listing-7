@@ -10,7 +10,7 @@
           <img class="first-slide" src="<%= image_url 'professional.jpg' %>" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>职业</h1>
+              <h1>用专业的能力实现梦想</h1>
               <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
           </div>
@@ -19,7 +19,7 @@
           <img class="second-slide" src='<%= image_url 'dedicated.jpg' %>' alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>专注</h1>
+              <h1>用专注的态度兑换梦想</h1>
               <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
           </div>
@@ -28,7 +28,7 @@
           <img class="third-slide" src="<%= image_url 'cooperative.jpg' %>" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>协作</h1>
+              <h1>用协作的方式成就梦想</h1>
               <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
           </div>
@@ -51,11 +51,12 @@ $('.carousel').carousel({
 </script>
 
 <div class="container-fluid" >
-<table class="table table-boldered">
+  <div class="table-responsive">
+<table class="table table-hover">
   <thead>
       <tr>
-          <td>
-              职缺</td>
+          <td>职缺</td>
+          <td>城市</td>
           <td>薪资下限</td>
           <td>薪资上限</td>
           <td>刊登时间</td>
@@ -66,6 +67,9 @@ $('.carousel').carousel({
   <tr>
     <td>
       <%= link_to(job.title, job_path(job)) %>
+    </td>
+    <td>
+        <%= job.workplace.name %>
     </td>
     <td>
         <%= job.wage_lower_bound %>
@@ -79,4 +83,5 @@ $('.carousel').carousel({
   </tr>
   <% end %>
 </table>
+</div>
 </div>

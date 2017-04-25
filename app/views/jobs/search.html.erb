@@ -7,7 +7,7 @@
 
   <% elsif @jobs.blank? %>
     <br>
-    <h2 class="search-info-title">搜索信息不能为空，请输入关键字搜索</h2>
+    <h2 class="search-info-title">抱歉，这里没有"<%= @query_string %>"的信息，您输入“Ruby”试试看？</h2>
   <% else %>
     <h2 class="search-info-title"> 有关"<%= @query_string %>"的工作信息 </h2>
     <div class="search-result">

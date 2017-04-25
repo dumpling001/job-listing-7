@@ -1,8 +1,8 @@
 <h1> <%= @job.title %> </h1>
 
 <p>
+  <%= @job.workplace.name %>
   <%= simple_format(@job.description) %>
-    <%= @job.workplace.name %>
 </p>
 
 

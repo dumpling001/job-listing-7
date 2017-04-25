@@ -31,11 +31,14 @@ class Admin::JobsController < ApplicationController
 
     def edit
       @job = Job.find(params[:id])
+      @job.workplace_id = params[:workplace_id]
       @workplaces = Workplace.all.map { |c| [c.name, c.id] } #这一行为加入的代码
     end
 
     def update
       @job = Job.find(params[:id])
+      @job.workplace_id = params[:workplace_id]
+      
       if @job.update(job_params)
         redirect_to admin_jobs_path
       else
