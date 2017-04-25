@@ -51,17 +51,155 @@ $('.carousel').carousel({
 </script>
 
 <div class="city-item">
-  <div class="row">
-      <a href="#">
-        <img class="img-circle" src="<%= image_url 'beijing.jpg' %>" alt="北京">
-      </a>
-      <h1>北京</h1>
-</div>
+  <div class="container-fluid">
+    <div class="col-md-12 text-center">
+      <h1 style="padding: 20px;">热门城市招聘</h1>
+    </div>
 
-  <div class="row">
+    <!-- beijing -->
+    <div class="row" style="margin-top:50px">
+      <div class="col-md-3 text-center">
+        <a href="#">
+          <img class="img-circle" src="<%= image_url 'beijing.jpg' %>" alt="北京">
+        </a>
+     </div>
+
+    <div class="col-md-9 text-center">
+     <table class="table table-hover">
+       <thead>
+           <tr>
+               <td>招聘职位</td>
+               <td>城市</td>
+               <td>薪资下限</td>
+               <td>薪资上限</td>
+               <td>刊登时间</td>
+           </tr>
+       </thead>
+       <tbody>
+       <% @bj.each do |job| %>
+       <tr>
+         <td><%= link_to(job.title, job_path(job)) %></td>
+         <td><%= job.workplace.name %></td>
+         <td><%= job.wage_lower_bound %></td>
+         <td><%= job.wage_upper_bound %></td>
+         <td><%= job.created_at %></td>
+       </tr>
+       <% end %>
+       </tbody>
+     </table>
+   </div>
+  </div>
+  <!-- beijing -->
+
+
+  <!-- shenzhen -->
+  <div class="row" style="margin-top:50px">
+    <div class="col-md-3 text-center">
       <a href="#">
-        <img class="img-circle" src="<%= image_url 'hangzhou.jpg' %>" alt="杭州">
+        <img class="img-circle" src="<%= image_url 'shenzhen.jpg' %>" alt="深圳">
       </a>
-      <h1>杭州</h1>
-      </div>
+   </div>
+
+  <div class="col-md-9 text-center">
+    <table class="table table-hover">
+      <thead>
+         <tr>
+             <td>招聘职位</td>
+             <td>城市</td>
+             <td>薪资下限</td>
+             <td>薪资上限</td>
+             <td>刊登时间</td>
+         </tr>
+     </thead>
+     <tbody>
+     <% @sz.each do |job| %>
+           <tr>
+             <td><%= link_to(job.title, job_path(job)) %></td>
+             <td><%= job.workplace.name %></td>
+             <td><%= job.wage_lower_bound %></td>
+             <td><%= job.wage_upper_bound %></td>
+             <td><%= job.created_at %></td>
+           </tr>
+           <% end %>
+    </tbody>
+   </table>
+  </div>
+ </div>
+<!-- shenzhen -->
+
+
+<!-- shanghai -->
+<div class="row" style="margin-top:50px">
+  <div class="col-md-3 text-center">
+    <a href="#">
+      <img class="img-circle" src="<%= image_url 'shanghai.jpg' %>" alt="上海">
+    </a>
+ </div>
+
+<div class="col-md-9 text-center">
+  <table class="table table-hover">
+    <thead>
+       <tr>
+           <td>招聘职位</td>
+           <td>城市</td>
+           <td>薪资下限</td>
+           <td>薪资上限</td>
+           <td>刊登时间</td>
+       </tr>
+   </thead>
+   <tbody>
+   <% @sh.each do |job| %>
+         <tr>
+           <td><%= link_to(job.title, job_path(job)) %></td>
+           <td><%= job.workplace.name %></td>
+           <td><%= job.wage_lower_bound %></td>
+           <td><%= job.wage_upper_bound %></td>
+           <td><%= job.created_at %></td>
+         </tr>
+         <% end %>
+  </tbody>
+ </table>
+</div>
+</div>
+<!-- shanghai -->
+
+
+
+<!-- hangzhou -->
+<div class="row" style="margin-top:50px">
+  <div class="col-md-3 text-center">
+    <a href="#">
+      <img class="img-circle" src="<%= image_url 'hangzhou.jpg' %>" alt="杭州">
+    </a>
+ </div>
+
+<div class="col-md-9 text-center">
+  <table class="table table-hover">
+    <thead>
+       <tr>
+           <td>招聘职位</td>
+           <td>城市</td>
+           <td>薪资下限</td>
+           <td>薪资上限</td>
+           <td>刊登时间</td>
+       </tr>
+   </thead>
+   <tbody>
+   <% @hz.each do |job| %>
+         <tr>
+           <td><%= link_to(job.title, job_path(job)) %></td>
+           <td><%= job.workplace.name %></td>
+           <td><%= job.wage_lower_bound %></td>
+           <td><%= job.wage_upper_bound %></td>
+           <td><%= job.created_at %></td>
+         </tr>
+         <% end %>
+  </tbody>
+ </table>
+</div>
+</div>
+<!-- hangzhou -->
+
+
+ </div>
 </div>

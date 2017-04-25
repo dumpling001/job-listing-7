@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
   before_action :validate_search_key, only: [:search]
+
   def index
     @search = Job.ransack(params[:q])
     @jobs = @search.result.where(is_hidden: false)
@@ -11,6 +12,7 @@ class JobsController < ApplicationController
       @workplace_id = Workplace.find_by(name: params[:workplace]).id
       @jobs = Job.where(:workplace_id => @workplace_id).recent
     end
+
   end
 
   def show
