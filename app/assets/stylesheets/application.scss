@@ -162,6 +162,8 @@
     width: 100%; /* Set width to 100% */
     margin: auto;
     opacity: 0.7;
+    -webkit-filter: contrast(180%);
+    filter: contrast(180%);
 }
 
 .carousel-caption h3 {
