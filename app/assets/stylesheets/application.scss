@@ -161,8 +161,6 @@
      /*filter: grayscale(90%); make all photos black and white */
     width: 100%; /* Set width to 100% */
     margin: auto;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
     background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
 }
 
