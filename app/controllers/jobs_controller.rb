@@ -10,7 +10,7 @@ class JobsController < ApplicationController
       @jobs = Job.published.recent
     else
       @workplace_id = Workplace.find_by(name: params[:workplace]).id
-      @jobs = Job.where(:workplace_id => @workplace_id).recent
+      @jobs = Job.where(:workplace_id => @workplace_id).order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 15)
     end
 
   end

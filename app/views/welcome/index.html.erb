@@ -68,11 +68,11 @@ $('.carousel').carousel({
      <table class="table table-hover">
        <thead>
            <tr>
-               <td>招聘职位</td>
-               <td>城市</td>
-               <td>薪资下限</td>
-               <td>薪资上限</td>
-               <td>刊登时间</td>
+               <td class="col-md-1">招聘职位</td>
+               <td class="col-md-1">城市</td>
+               <td class="col-md-1">薪资下限</td>
+               <td class="col-md-1">薪资上限</td>
+               <td class="col-md-1">刊登时间</td>
            </tr>
        </thead>
        <tbody>
@@ -87,6 +87,11 @@ $('.carousel').carousel({
        <% end %>
        </tbody>
      </table>
+
+    <div class="pull-right">
+      <%= will_paginate @bj %>
+    </div>
+
    </div>
   </div>
   <!-- beijing -->
@@ -123,6 +128,11 @@ $('.carousel').carousel({
            <% end %>
     </tbody>
    </table>
+
+       <div class="pull-right">
+         <%= will_paginate @sz %>
+       </div>
+
   </div>
  </div>
 <!-- shenzhen -->
@@ -159,6 +169,11 @@ $('.carousel').carousel({
          <% end %>
   </tbody>
  </table>
+
+     <div class="pull-right">
+       <%= will_paginate @sh %>
+     </div>
+
 </div>
 </div>
 <!-- shanghai -->
@@ -196,6 +211,11 @@ $('.carousel').carousel({
          <% end %>
   </tbody>
  </table>
+
+     <div class="pull-right">
+       <%= will_paginate @hz %>
+     </div>
+
 </div>
 </div>
 <!-- hangzhou -->
