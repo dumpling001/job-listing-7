@@ -146,13 +146,19 @@
   font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
 }
 
-.carousel {
+#myCarousel {
   margin: -20px -15px 0px -15px;
+}
+
+.carousel-caption {
+    left: 30%;
+    right: 5%;
+    padding-top: 30px;
 }
 
 .carousel-caption h1 {
   margin-bottom: 350px;
-  color: #d9534f;
+  color: white;
   font-size: 500%;
 }
 
@@ -166,12 +172,6 @@
 
 .carousel-caption h3 {
     color: #fff !important;
-}
-
-@media (max-width: 100%) {
-    .carousel-caption {
-        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
-    }
 }
 
 .city-item {
