@@ -7,21 +7,18 @@
               <h1>你的未来，由你手绘。</h1>
 
 <!-- hot jobs -->
-<div class="row">
-  <!-- <div class="col-md-3 text-center">
+<!-- beijing -->
+<div class="row" style="margin-top:50px">
+  <div class="col-md-1">
     <a href="#">
-      <img class="img-circle" src="<%= image_url '' %>" alt="北京">
     </a>
- </div> -->
-
- <div class="col-md-1 text-center">
-</div>
+ </div>
 
 <div class="col-md-9">
  <table class="table table-hover">
    <thead>
        <tr>
-           <td class="col-md-1">热招职位</td>
+           <td class="col-md-1">招聘职位</td>
            <td class="col-md-1">城市</td>
            <td class="col-md-1">薪资下限</td>
            <td class="col-md-1">薪资上限</td>
@@ -39,21 +36,16 @@
    </tbody>
  </table>
 
-<div class="pull-right">
-  <%= will_paginate @bj %>
-</div>
-
 </div>
 </div>
 <!-- beijing -->
-
 
 <!-- hot jobs -->
               <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
         </div>
-      </div>
-    </div>
+     </div>
+</div>
 
 <div class="city-item">
   <div class="container-fluid">
@@ -93,10 +85,6 @@
        </tbody>
      </table>
 
-    <div class="pull-right">
-      <%= will_paginate @bj %>
-    </div>
-
    </div>
   </div>
   <!-- beijing -->
@@ -134,10 +122,6 @@
     </tbody>
    </table>
 
-       <div class="pull-right">
-         <%= will_paginate @sz %>
-       </div>
-
   </div>
  </div>
 <!-- shenzhen -->
@@ -174,10 +158,6 @@
          <% end %>
   </tbody>
  </table>
-
-     <div class="pull-right">
-       <%= will_paginate @sh %>
-     </div>
 
 </div>
 </div>
@@ -217,9 +197,6 @@
   </tbody>
  </table>
 
-     <div class="pull-right">
-       <%= will_paginate @hz %>
-     </div>
 
 </div>
 </div>
