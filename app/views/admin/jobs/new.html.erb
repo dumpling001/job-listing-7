@@ -6,9 +6,13 @@
 <%= f.input :description %>
 <%= f.input :wage_lower_bound, :label => "薪资下限" %>
 <%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
+<%= f.input :company, :label => "公司名称" %>
+<%= f.input :phone, :label => "电话" %>
+<%= f.input :address, :label => "地址" %>
+<%= f.input :source, :label => "信息来源" %>
+<%= f.input :contact_email, :label => "收简历的邮箱" %>
 <%= select_tag(:workplace_id, options_for_select(@workplaces), :prompt => "城市") %>
 <%= f.input :is_hidden %>
-
 <%= f.submit "Submit" %>
+
 <% end %>
