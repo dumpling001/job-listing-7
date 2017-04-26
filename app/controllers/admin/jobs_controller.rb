@@ -11,6 +11,7 @@ class Admin::JobsController < ApplicationController
 
     def index
       @jobs = Job.all
+      @jobs = current_user.jobs.all
     end
 
     def new
@@ -21,6 +22,7 @@ class Admin::JobsController < ApplicationController
     def create
       @job = Job.new(job_params)
       @job.workplace_id = params[:workplace_id]
+      @job.user = current_user
 
       if @job.save
         redirect_to admin_jobs_path
@@ -38,7 +40,7 @@ class Admin::JobsController < ApplicationController
     def update
       @job = Job.find(params[:id])
       @job.workplace_id = params[:workplace_id]
-      
+
       if @job.update(job_params)
         redirect_to admin_jobs_path
       else
