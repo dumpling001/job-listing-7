@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
   def index
     @search = Job.ransack(params[:q])
-    @jobs = @search.result.where(is_hidden: false)
+    @jobs = @search.result.published
 
     if params[:workplace].blank?
       @jobs = Job.published.recent
