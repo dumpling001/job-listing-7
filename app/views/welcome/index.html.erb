@@ -5,6 +5,50 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>你的未来，由你手绘。</h1>
+
+<!-- hot jobs -->
+<div class="row">
+  <!-- <div class="col-md-3 text-center">
+    <a href="#">
+      <img class="img-circle" src="<%= image_url '' %>" alt="北京">
+    </a>
+ </div> -->
+
+ <div class="col-md-1 text-center">
+</div>
+
+<div class="col-md-9">
+ <table class="table table-hover">
+   <thead>
+       <tr>
+           <td class="col-md-1">热招职位</td>
+           <td class="col-md-1">城市</td>
+           <td class="col-md-1">薪资下限</td>
+           <td class="col-md-1">薪资上限</td>
+       </tr>
+   </thead>
+   <tbody>
+   <% @bj.each do |job| %>
+   <tr>
+     <td><%= link_to(job.title, job_path(job)) %></td>
+     <td><%= job.workplace.name %></td>
+     <td><%= job.wage_lower_bound %></td>
+     <td><%= job.wage_upper_bound %></td>
+   </tr>
+   <% end %>
+   </tbody>
+ </table>
+
+<div class="pull-right">
+  <%= will_paginate @bj %>
+</div>
+
+</div>
+</div>
+<!-- beijing -->
+
+
+<!-- hot jobs -->
               <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
             </div>
         </div>
