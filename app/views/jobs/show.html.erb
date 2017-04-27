@@ -1,10 +1,18 @@
 <h1> <%= @job.title %> </h1>
 
+<span class="pull-left">
+  <% if current_user && current_user.is_member_of?(@job) %>
+    <label class="label label-success"> 已收藏 </label>
+  <% else %>
+    <label class="label label-warning"> 未收藏 </label>
+  <% end %>
+</span>
+
 <p>
   <%= @job.workplace.name %>
   <%= simple_format(@job.description) %>
 </p>
-
+</div>
 
 <div class="text-center">
   <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline;") %>

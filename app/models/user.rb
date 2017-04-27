@@ -10,7 +10,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-def admin?
-  is_admin
-end
+  def admin?
+    is_admin
+  end
+
+  def is_member_of?(job)
+    participated_jobs.include?(job)
+  end
+
 end
