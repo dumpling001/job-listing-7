@@ -1,6 +1,6 @@
 <div class="col-md-12">
 
-  <h2 class="text-center"> 我加入的讨论版 </h2>
+  <h2 class="text-center"> 我收藏的工作列表 </h2>
 
   <table class="table">
     <thead>
@@ -8,7 +8,6 @@
         <th> # </th>
         <th> Title </th>
         <th> Description </th>
-        <th> Post Count </th>
         <th> Last Update </th>
       </tr>
     </thead>
@@ -19,7 +18,6 @@
           <td> # </td>
           <td> <%= link_to(job.title, job_path(job)) %> </td>
           <td> <%= job.description %> </td>
-          <td> <%= job.posts.count %> </td>
           <td> <%= job.updated_at %> </td>
         </tr>
       <% end %>
