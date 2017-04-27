@@ -1,7 +1,7 @@
 class Admin::JobsController < ApplicationController
-  class Admin::JobsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
     before_action :require_is_admin
+    before_action :find_job_and_check_permission, only: [:edit, :update, :destroy]
     layout "admin"
 
 
@@ -32,11 +32,6 @@ class Admin::JobsController < ApplicationController
     end
 
     def edit
-      @job = Job.find(params[:id])
-
-      if current_user != @job.user
-        redirect_to root_path, alert: "您没有权限！"
-      end
 
       @job.workplace_id = params[:workplace_id]
       @workplaces = Workplace.all.map { |c| [c.name, c.id] } #这一行为加入的代码
@@ -44,12 +39,6 @@ class Admin::JobsController < ApplicationController
     end
 
     def update
-      @job = Job.find(params[:id])
-
-      if current_user != @job.user
-        redirect_to root_path, alert: "您没有权限！"
-      end
-
       @job.workplace_id = params[:workplace_id]
 
       if @job.update(job_params)
@@ -61,12 +50,6 @@ class Admin::JobsController < ApplicationController
     end
 
     def destroy
-      @job = Job.find(params[:id])
-
-      if current_user != @job.user
-        redirect_to root_path, alert: "您没有权限！"
-      end    
-
       @job.destroy
 
       redirect_to admin_jobs_path
@@ -86,8 +69,15 @@ class Admin::JobsController < ApplicationController
 
     private
 
+    def find_job_and_check_permission
+      @job = Job.find(params[:id])
+
+      if current_user != @job.user
+        redirect_to root_path, alert: "抱歉，您没有权限！"
+      end
+    end
+
     def job_params
       params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :workplace_id, :company, :address, :phone, :source)
     end
   end
-end
