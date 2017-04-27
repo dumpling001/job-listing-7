@@ -18,4 +18,12 @@ class User < ApplicationRecord
     participated_jobs.include?(job)
   end
 
+  def inbox!(job)
+    participated_jobs << job
+  end
+
+  def outbox!(job)
+    participated_jobs.delete(job)
+  end
+
 end
