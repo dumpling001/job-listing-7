@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy, :inbox, :outbox]
   before_action :validate_search_key, only: [:search]
 
   def index
@@ -28,6 +28,35 @@ class JobsController < ApplicationController
       @jobs = search_result.paginate(:page => params[:page], :per_page => 5)
     end
   end
+
+
+  def inbox
+   @job = Job.find(params[:id])
+
+    if !current_user.is_member_of?(@job)
+      current_user.inbox!(@job)
+      flash[:notice] = "收藏成功！"
+    else
+      flash[:warning] = "你已经收藏过了！"
+    end
+
+    redirect_to job_path(@job)
+  end
+
+  def outbox
+    @job = Job.find(params[:id])
+
+    if current_user.is_member_of?(@job)
+      current_user.outbox!(@job)
+      flash[:alert] = "已取消收藏！"
+    else
+      flash[:warning] = "本来就没有收藏哦！"
+    end
+
+    redirect_to job_path(@job)
+  end
+
+
 
   protected
 
