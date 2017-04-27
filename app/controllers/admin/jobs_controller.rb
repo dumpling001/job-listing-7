@@ -33,12 +33,23 @@ class Admin::JobsController < ApplicationController
 
     def edit
       @job = Job.find(params[:id])
+
+      if current_user != @job.user
+        redirect_to root_path, alert: "您没有权限！"
+      end
+
       @job.workplace_id = params[:workplace_id]
       @workplaces = Workplace.all.map { |c| [c.name, c.id] } #这一行为加入的代码
+
     end
 
     def update
       @job = Job.find(params[:id])
+
+      if current_user != @job.user
+        redirect_to root_path, alert: "您没有权限！"
+      end
+
       @job.workplace_id = params[:workplace_id]
 
       if @job.update(job_params)
@@ -46,10 +57,15 @@ class Admin::JobsController < ApplicationController
       else
         render :edit
       end
+
     end
 
     def destroy
       @job = Job.find(params[:id])
+
+      if current_user != @job.user
+        redirect_to root_path, alert: "您没有权限！"
+      end    
 
       @job.destroy
 
