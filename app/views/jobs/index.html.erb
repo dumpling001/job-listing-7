@@ -4,9 +4,9 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li><%= sort_link @search, :wage_lower_bound, "薪资下限排序" %></li>
-        <li><%= sort_link @search, :wage_upper_bound, "薪资上限排序" %></li>
-        <li><%= sort_link @search, :created_at, "创建时间顺序" %></li>
+        <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
+        <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
+        <li><%= link_to("按照发表时间排序", jobs_path ) %></li>
     </ul>
 </div>
 
