@@ -8,21 +8,17 @@
   <% else %>
     <label class="label label-warning"> 未收藏 </label>
         <%= link_to("加入收藏", inbox_job_path(@job), method: :post, class: "btn btn-default") %>
-
-    <span class="pull-right">
-      <% if current_user && current_user.is_voter_of?(@job) %>
-        <label class="label label-success"> like </label>
-        <%= link_to("消赞", downvote_job_path(@job), method: :post, class: "btn btn-default") %>
-          <% else %>
-            <label class="label label-warning"> unlike </label>
-        <%= link_to("点赞", upvote_job_path(@job), method: :post, class: "btn btn-default") %>
-      <% end %>
-    </span>
-
-
   <% end %>
 </span>
 
+<span class="pull-right">
+  <% if current_user && current_user.is_voter_of?(@job) %>
+    <%= link_to("", downvote_job_path(@job), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
+      <% else %>
+    <%= link_to("", upvote_job_path(@job), method: :post, class: "fa fa-heart-o fa-2x") %>
+  <% end %>
+</span>
+<%= @job.voters.count %>
 <p>
   <%= @job.workplace.name %>
   <%= simple_format(@job.description) %>

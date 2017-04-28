@@ -61,9 +61,6 @@ class JobsController < ApplicationController
 
     if !current_user.is_voter_of?(@job)
       current_user.upvote!(@job)
-      flash[:notice] = " 已点赞！"
-    else
-      flash[:warning] = "点过赞啦！"
     end
 
     redirect_to :back
@@ -74,11 +71,7 @@ class JobsController < ApplicationController
 
     if current_user.is_voter_of?(@job)
       current_user.downvote!(@job)
-      flash[:alert] = "已消赞！"
-    else
-      flash[:warning] = "你没有赞过！"
     end
-
     redirect_to :back
   end
 
