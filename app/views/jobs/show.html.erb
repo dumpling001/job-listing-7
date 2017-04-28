@@ -2,16 +2,11 @@
 
 <span class="pull-left">
   <% if current_user && current_user.is_member_of?(@job) %>
-    <label class="label label-success"> 已收藏 </label>
-        <%= link_to("取消收藏", outbox_job_path(@job), method: :post, class: "btn btn-default") %>
-
+        <%= link_to("", outbox_job_path(@job), method: :post, class: "fa fa-folder fa-3x") %>
   <% else %>
-    <label class="label label-warning"> 未收藏 </label>
-        <%= link_to("加入收藏", inbox_job_path(@job), method: :post, class: "btn btn-default") %>
+        <%= link_to("", inbox_job_path(@job), method: :post, class: "fa fa-folder-o fa-3x") %>
   <% end %>
-</span>
 
-<span class="pull-right">
   <%= @job.voters.count %>
   <% if current_user && current_user.is_voter_of?(@job) %>
     <%= link_to("", downvote_job_path(@job), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
@@ -23,7 +18,6 @@
   <%= @job.workplace.name %>
   <%= simple_format(@job.description) %>
 </p>
-</div>
 
 <div class="text-center">
   <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline;") %>
