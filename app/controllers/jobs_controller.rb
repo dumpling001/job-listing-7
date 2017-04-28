@@ -56,7 +56,11 @@ class JobsController < ApplicationController
     redirect_to job_path(@job)
   end
 
-
+  def upvote
+    @job = Job.find(params[:id])
+    @job.upvote_by current_user
+    redirect_to :back
+  end
 
   protected
 
