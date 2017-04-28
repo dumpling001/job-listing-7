@@ -28,4 +28,8 @@ class User < ApplicationRecord
     participated_jobs.delete(job)
   end
 
+  def is_voter_of?(job)
+    voted_jobs.include?(job)
+  end
+
 end

@@ -9,6 +9,15 @@
     <label class="label label-warning"> 未收藏 </label>
         <%= link_to("加入收藏", inbox_job_path(@job), method: :post, class: "btn btn-default") %>
 
+    <span class="pull-right">
+      <% if current_user.is_voter_of?(@job) %>
+        <label class="label label-success"> like </label>
+      <% else %>
+        <label class="label label-warning"> unlike </label>
+      <% end %>
+    </span>
+
+
   <% end %>
 </span>
 
