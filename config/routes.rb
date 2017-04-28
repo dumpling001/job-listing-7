@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     member do
       post :inbox
       post :outbox
-      put "like", to: "jobs#upvote"
+      post :upvote
+      post :downvote
     end
     resources :resumes
     collection do

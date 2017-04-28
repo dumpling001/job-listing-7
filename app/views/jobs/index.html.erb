@@ -14,6 +14,8 @@
   <thead>
       <tr>
           <td>招聘职位</td>
+          <td>收藏</td>
+          <td>点赞</td>
           <td>城市</td>
           <td>薪资下限</td>
           <td>薪资上限</td>
@@ -24,17 +26,27 @@
   <tbody>
   <% @jobs.each do |job| %>
   <tr>
-    <td><%= link_to(job.title, job_path(job)) %>
 
-      <%= link_to like_job_path(job), method: :put do %>
-      <div class="pi-thumbs-up">
-      <i class="fa fa-heart fa-x" , style="color:red;"></i>
-      <%= job.get_upvotes.size %>
-      </div>
-      <% end %>
-
-
+    <td>
+      <%= link_to(job.title, job_path(job)) %>
     </td>
+    <td>
+      <% if current_user && current_user.is_member_of?(job) %>
+            <%= link_to("", outbox_job_path(job), method: :post, class: "fa fa-folder") %>
+      <% else %>
+            <%= link_to("", inbox_job_path(job), method: :post, class: "fa fa-folder-o") %>
+      <% end %>
+    </td>
+    <td>
+      <%= job.voters.count %>
+      <% if current_user && current_user.is_voter_of?(job) %>
+        <%= link_to("", downvote_job_path(job), method: :post, class: "fa fa-heart", style: "color:red;") %>
+          <% else %>
+        <%= link_to("", upvote_job_path(job), method: :post, class: "fa fa-heart-o") %>
+      <% end %>
+    </td>
+
+
     <td><%= job.workplace.name %></td>
     <td><%= job.wage_lower_bound %></td>
     <td><%= job.wage_upper_bound %></td>

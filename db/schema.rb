@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170428030323) do
+=======
+ActiveRecord::Schema.define(version: 20170428052015) do
+>>>>>>> version1.0
 
   create_table "job_to_users", force: :cascade do |t|
     t.integer  "job_id"
@@ -64,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170428030323) do
   end
 
   create_table "votes", force: :cascade do |t|
+<<<<<<< HEAD
     t.string   "votable_type"
     t.integer  "votable_id"
     t.string   "voter_type"
@@ -75,6 +80,12 @@ ActiveRecord::Schema.define(version: 20170428030323) do
     t.datetime "updated_at"
     t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+=======
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+>>>>>>> version1.0
   end
 
   create_table "workplaces", force: :cascade do |t|
