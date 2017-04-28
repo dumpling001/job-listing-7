@@ -6,6 +6,9 @@ class Job < ApplicationRecord
   has_many :job_to_user
   has_many :members, through: :job_to_user, source: :user
 
+  has_many :votes
+  has_many :voters, through: :votes, source: :user
+
   validates :title, presence: true
   validates :wage_upper_bound, presence: true
   validates :wage_lower_bound, presence: true

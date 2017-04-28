@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :job_to_user
   has_many :participated_jobs, :through => :job_to_user, :source => :job
 
+  has_many :votes
+  has_many :voted_jobs, :through => :votes, :source => :job
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
