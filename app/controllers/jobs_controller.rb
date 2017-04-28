@@ -40,7 +40,7 @@ class JobsController < ApplicationController
       flash[:warning] = "你已经收藏过了！"
     end
 
-    redirect_to job_path(@job)
+    redirect_to :back
   end
 
   def outbox
@@ -50,13 +50,37 @@ class JobsController < ApplicationController
       current_user.outbox!(@job)
       flash[:alert] = "已取消收藏！"
     else
-      flash[:warning] = "本来就没有收藏哦！"
+      flash[:warning] = "你还没收藏过呢！"
     end
 
-    redirect_to job_path(@job)
+    redirect_to :back
   end
 
+  def upvote
+   @job = Job.find(params[:id])
 
+    if !current_user.is_voter_of?(@job)
+      current_user.upvote!(@job)
+      flash[:notice] = " 已点赞！"
+    else
+      flash[:warning] = "点过赞啦！"
+    end
+
+    redirect_to :back
+  end
+
+  def downvote
+    @job = Job.find(params[:id])
+
+    if current_user.is_voter_of?(@job)
+      current_user.downvote!(@job)
+      flash[:alert] = "已消赞！"
+    else
+      flash[:warning] = "你没有赞过！"
+    end
+
+    redirect_to :back
+  end
 
   protected
 
