@@ -35,9 +35,6 @@ class JobsController < ApplicationController
 
     if !current_user.is_member_of?(@job)
       current_user.inbox!(@job)
-      flash[:notice] = "收藏成功！"
-    else
-      flash[:warning] = "你已经收藏过了！"
     end
 
     redirect_to :back
@@ -48,9 +45,6 @@ class JobsController < ApplicationController
 
     if current_user.is_member_of?(@job)
       current_user.outbox!(@job)
-      flash[:alert] = "已取消收藏！"
-    else
-      flash[:warning] = "你还没收藏过呢！"
     end
 
     redirect_to :back
