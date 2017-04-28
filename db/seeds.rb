@@ -15,7 +15,7 @@ create_job = for i in 1..20 do
 Job.create!([title: "Job no.#{i}", description: "这是用seeds文件建立的第 #{i} 个公开的工作", wage_upper_bound: rand(20..50)*1000, wage_lower_bound: rand(10..20)*1000, is_hidden: "false", workplace_id: rand(1..4)])
 end
 create_job = for i in 1..20 do
-Job.create!([title: "Job no.#{i}", description: "这是用seeds文件建立的第 #{i} 个隐藏的工作", wage_upper_bound: rand(20..50)*100, wage_lower_bound: rand(5..15)*1000, is_hidden: "true", workplace_id: rand(1..4)])
+Job.create!([title: "Job no.#{i}", description: "这是用seeds文件建立的第 #{i} 个隐藏的工作", wage_upper_bound: rand(20..50)*1000, wage_lower_bound: rand(5..15)*1000, is_hidden: "true", workplace_id: rand(1..4)])
 end
 
 puts "20 Hidden jobs created."
