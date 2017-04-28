@@ -31,5 +31,13 @@ class User < ApplicationRecord
   def is_voter_of?(job)
     voted_jobs.include?(job)
   end
+  def upvote!(job)
+    voted_jobs << job
+  end
+
+  def downvote!(job)
+    voted_jobs.delete(job)
+  end
+
 
 end
