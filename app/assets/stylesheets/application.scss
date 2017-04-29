@@ -19,13 +19,19 @@
 @import "font-awesome";
 
 .html {
-  position: relative;
-  min-height: 100%;
+  height: 100%;
 }
 
 .body {
+  min-height: 100%;
   margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
   font-family: Verdana,"Helvetica Neue",Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+
+.main {
+  flex: 1;
 }
 
 .navbar-inverse{
@@ -33,15 +39,14 @@
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
   height: 100px;
-  background-color: #E0E0E0;
+  background-color: #414a60;
   margin-top: -20px;
-
+  bottom: 0px;
   p {
     padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
   }
 }
 
