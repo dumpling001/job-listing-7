@@ -31,19 +31,11 @@
       <%= link_to(job.title, job_path(job)) %>
     </td>
     <td>
-      <% if current_user && current_user.is_member_of?(job) %>
-            <%= link_to("", outbox_job_path(job), method: :post, class: "fa fa-folder") %>
-      <% else %>
-            <%= link_to("", inbox_job_path(job), method: :post, class: "fa fa-folder-o") %>
-      <% end %>
+      <%= render_member_status(job) %>
     </td>
     <td>
       <%= job.voters.count %>
-      <% if current_user && current_user.is_voter_of?(job) %>
-        <%= link_to("", downvote_job_path(job), method: :post, class: "fa fa-heart", style: "color:red;") %>
-          <% else %>
-        <%= link_to("", upvote_job_path(job), method: :post, class: "fa fa-heart-o") %>
-      <% end %>
+      <%= render_voter_status(job) %>
     </td>
 
 

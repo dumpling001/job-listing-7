@@ -1,18 +1,10 @@
 <h1> <%= @job.title %> </h1>
 
 <span class="pull-left">
-  <% if current_user && current_user.is_member_of?(@job) %>
-        <%= link_to("", outbox_job_path(@job), method: :post, class: "fa fa-folder fa-3x") %>
-  <% else %>
-        <%= link_to("", inbox_job_path(@job), method: :post, class: "fa fa-folder-o fa-3x") %>
-  <% end %>
+  <%= render_member_status(@job) %>
 
   <%= @job.voters.count %>
-  <% if current_user && current_user.is_voter_of?(@job) %>
-    <%= link_to("", downvote_job_path(@job), method: :post, class: "fa fa-heart fa-2x", style: "color:red;") %>
-      <% else %>
-    <%= link_to("", upvote_job_path(@job), method: :post, class: "fa fa-heart-o fa-2x") %>
-  <% end %>
+  <%= render_voter_status(@job) %>
 </span>
 <p>
   <%= @job.workplace.name %>
