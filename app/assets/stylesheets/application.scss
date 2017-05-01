@@ -55,6 +55,53 @@
   border-radius: 0px;
 }
 
+.panel {
+  background-color: rgba(56, 14 ,14, 0.28);
+}
+
+.panel-body {
+
+  p{
+    color: #767888;
+    font-size: 120%;
+  }
+}
+
+.panel-heading h1 {
+  color: #d4053b;
+  font-size: 500%
+}
+
+#myCarousel {
+  margin: -20px -15px 0px -15px;
+}
+
+.carousel-caption {
+    left: 30%;
+    right: 5%;
+    padding-top: 30px;
+}
+
+.carousel-inner img {
+    /*-webkit-filter: grayscale(90%);*/
+     /*filter: grayscale(90%); make all photos black and white */
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
+}
+
+.carousel-caption h3 {
+    color: #fff !important;
+}
+
+.city-item {
+  margin: -20px -15px 0px -15px;
+}
+
+.col-md-3 img {
+  margin-bottom: 20px;
+}
+
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /****** LOGIN MODAL ******/
@@ -172,40 +219,4 @@
   padding-left: 15px;
   padding-bottom: 15px;
   font-family: PingFangSC-Medium, Arial, Helvetica, sans-serif;
-}
-
-#myCarousel {
-  margin: -20px -15px 0px -15px;
-}
-
-.carousel-caption {
-    left: 30%;
-    right: 5%;
-    padding-top: 30px;
-}
-
-.carousel-caption h1 {
-  margin-bottom: 50px;
-  color: white;
-  font-size: 500%;
-}
-
-.carousel-inner img {
-    /*-webkit-filter: grayscale(90%);*/
-     /*filter: grayscale(90%); make all photos black and white */
-    width: 100%; /* Set width to 100% */
-    margin: auto;
-    background: repeating-radial-gradient(black, black 5px, white 5px, white 10px);
-}
-
-.carousel-caption h3 {
-    color: #fff !important;
-}
-
-.city-item {
-  margin: -20px -15px 0px -15px;
-}
-
-.col-md-3 img {
-  margin-bottom: 20px;
 }

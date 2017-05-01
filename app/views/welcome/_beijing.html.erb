@@ -4,26 +4,31 @@
       <a href="/jobs?workplace=北京">
         <img class="img-circle" src="<%= image_url 'beijing.jpg' %>" alt="北京">
       </a>
-   </div>
+    </div>
 
-  <div class="col-md-9" style="margin: 20px 0px;">
-   <table class="table table-hover">
-     <thead>
-         <tr>
-             <td class="col-md-1">招聘职位</td>
-             <td class="col-md-1">收藏</td>
-             <td class="col-md-1">点赞</td>
-             <td class="col-md-1">城市</td>
-             <td class="col-md-1">薪资下限</td>
-             <td class="col-md-1">薪资上限</td>
-             <td class="col-md-1">刊登时间</td>
-         </tr>
-     </thead>
-     <tbody>
-     <%= render :partial => "city_item", :collection => @bj, :as => :job %>
-     </tbody>
-   </table>
-
- </div>
+    <div class="col-md-9" style="margin: 20px 0px;">
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+        <div class="panel-heading">
+          北京
+        </div>
+           <table class="table table-hover table-striped">
+             <thead>
+                 <tr>
+                     <td class="col-md-1">招聘职位</td>
+                     <td class="col-md-1">收藏</td>
+                     <td class="col-md-1">点赞</td>
+                     <td class="col-md-1">城市</td>
+                     <td class="col-md-1">起薪</td>
+                     <td class="col-md-1">挑战薪资</td>
+                     <td class="col-md-1">刊登时间</td>
+                 </tr>
+             </thead>
+             <tbody>
+             <%= render :partial => "city_item", :collection => @bj, :as => :job %>
+             </tbody>
+           </table>
+       </div>
+     </div>
 </div>
 <!-- beijing -->

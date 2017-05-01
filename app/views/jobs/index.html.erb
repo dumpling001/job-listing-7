@@ -4,8 +4,8 @@
         <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li><%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %></li>
-        <li><%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %></li>
+        <li><%= link_to("按照起薪排序", jobs_path(:order => "by_lower_bound")) %></li>
+        <li><%= link_to("按照挑战薪资排序", jobs_path(:order => "by_upper_bound")) %></li>
         <li><%= link_to("按照发表时间排序", jobs_path ) %></li>
     </ul>
 </div>
@@ -17,8 +17,8 @@
           <td>收藏</td>
           <td>点赞</td>
           <td>城市</td>
-          <td>薪资下限</td>
-          <td>薪资上限</td>
+          <td>起薪</td>
+          <td>挑战薪资</td>
           <td>刊登时间</td>
           <td>创建者</td>
       </tr>

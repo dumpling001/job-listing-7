@@ -7,24 +7,28 @@
      </div>
 
     <div class="col-md-9">
-      <table class="table table-hover">
-        <thead>
-           <tr>
-             <td class="col-md-1">招聘职位</td>
-             <td class="col-md-1">收藏</td>
-             <td class="col-md-1">点赞</td>
-             <td class="col-md-1">城市</td>
-             <td class="col-md-1">薪资下限</td>
-             <td class="col-md-1">薪资上限</td>
-             <td class="col-md-1">刊登时间</td>
-           </tr>
-       </thead>
-       <tbody>
-         <%= render :partial => "city_item", :collection => @sh, :as => :job %>
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+        <div class="panel-heading">上海</div>
+           <table class="table table-hover table-striped">
+            <thead>
+               <tr>
+                 <td class="col-md-1">招聘职位</td>
+                 <td class="col-md-1">收藏</td>
+                 <td class="col-md-1">点赞</td>
+                 <td class="col-md-1">城市</td>
+                 <td class="col-md-1">起薪</td>
+                 <td class="col-md-1">挑战薪资</td>
+                 <td class="col-md-1">刊登时间</td>
+               </tr>
+           </thead>
+           <tbody>
+             <%= render :partial => "city_item", :collection => @sh, :as => :job %>
 
-      </tbody>
-     </table>
+          </tbody>
+         </table>
 
     </div>
-    </div>
+  </div>
+</div>
 <!-- shanghai -->

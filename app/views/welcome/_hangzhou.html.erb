@@ -1,31 +1,32 @@
 <!-- hangzhou -->
-    <div class="row" style="margin: 20px 0px;">
-      <div class="col-md-3 text-center">
+<div class="row" style="margin: 20px 0px;">
+    <div class="col-md-3 text-center">
         <a href="/jobs?workplace=杭州">
           <img class="img-circle" src="<%= image_url 'hangzhou.jpg' %>" alt="杭州">
         </a>
      </div>
 
     <div class="col-md-9">
-      <table class="table table-hover">
-        <thead>
-           <tr>
-             <td class="col-md-1">招聘职位</td>
-             <td class="col-md-1">收藏</td>
-             <td class="col-md-1">点赞</td>
-             <td class="col-md-1">城市</td>
-             <td class="col-md-1">薪资下限</td>
-             <td class="col-md-1">薪资上限</td>
-             <td class="col-md-1">刊登时间</td>
-           </tr>
-       </thead>
-       <tbody>
-         <%= render :partial => "city_item", :collection => @hz, :as => :job %>
-
-      </tbody>
-     </table>
-
-
-    </div>
-    </div>
+      <div class="panel panel-default">
+      <!-- Default panel contents -->
+        <div class="panel-heading">杭州</div>
+           <table class="table table-hover table-striped">
+            <thead>
+               <tr>
+                 <td class="col-md-1">招聘职位</td>
+                 <td class="col-md-1">收藏</td>
+                 <td class="col-md-1">点赞</td>
+                 <td class="col-md-1">城市</td>
+                 <td class="col-md-1">起薪</td>
+                 <td class="col-md-1">挑战薪资</td>
+                 <td class="col-md-1">刊登时间</td>
+               </tr>
+           </thead>
+           <tbody>
+             <%= render :partial => "city_item", :collection => @hz, :as => :job %>
+          </tbody>
+        </table>
+     </div>
+   </div>
+</div>
 <!-- hangzhou -->

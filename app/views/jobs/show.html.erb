@@ -1,16 +1,20 @@
-<h1> <%= @job.title %> </h1>
+<div class="panel panel-default">
+<!-- Default panel contents -->
+  <div class="panel-heading">
+    <h1> <%= @job.title %> </h1>
+  </div>
+  <div class="panel-body">
+    <span class="pull-left">
+      <td><%= render_member_status(@job) %></td> |
+      <td><%= @job.voters.count %></td>
+      <%= render_voter_status(@job) %> |
+      <%= @job.workplace.name %>
+    </span>
+  </div>
+  <div class="panel-body">
+       <td><%= simple_format(@job.description) %></td>
+  </div>
 
-<span class="pull-left">
-  <%= render_member_status(@job) %>
-
-  <%= @job.voters.count %>
-  <%= render_voter_status(@job) %>
-</span>
-<p>
-  <%= @job.workplace.name %>
-  <%= simple_format(@job.description) %>
-</p>
-
-<div class="text-center">
-  <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline;") %>
+<div class="panel-footer">
+  <%= link_to("马上投简历！", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration: underline;") %>
 </div>

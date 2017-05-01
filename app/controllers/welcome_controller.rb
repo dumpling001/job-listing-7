@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
     @search = Job.ransack(params[:q])
     @jobs = @search.result.published
 
-    @hit = Job.published.order('created_at DESC').paginate(:page => params[:page], :per_page => 5)
+    @hit = Job.published.order('wage_upper_bound DESC').paginate(:page => params[:page], :per_page => 5)
 
     @bj = Job.where(workplace_id:'1').order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 5)
     @sz = Job.where(workplace_id:'2').order('wage_lower_bound DESC').paginate(:page => params[:page], :per_page => 5)
