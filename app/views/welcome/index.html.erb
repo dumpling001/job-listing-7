@@ -6,43 +6,13 @@
             <div class="carousel-caption">
               <h1>你的未来，由你手绘。</h1>
 
-<!-- hot jobs -->
-    <div class="row" style="margin: 20px 0px">
-      <div class="col-md-1">
-        <a href="#">
-        </a>
+              <!-- hot jobs -->
+              <%= render "hotjobs" %>
+              <!-- hot jobs -->
+              <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
+           </div>
+        </div>
      </div>
-
-    <div class="col-md-9">
-     <table class="table table-hover">
-       <thead>
-           <tr>
-               <td class="col-md-1">招聘职位</td>
-               <td class="col-md-1">城市</td>
-               <td class="col-md-1">薪资下限</td>
-               <td class="col-md-1">薪资上限</td>
-           </tr>
-       </thead>
-       <tbody>
-       <% @bj.each do |job| %>
-       <tr>
-         <td><%= link_to(job.title, job_path(job)) %></td>
-         <td><%= job.workplace.name %></td>
-         <td><%= job.wage_lower_bound %></td>
-         <td><%= job.wage_upper_bound %></td>
-       </tr>
-       <% end %>
-       </tbody>
-     </table>
-
-    </div>
-    </div>
-
-<!-- hot jobs -->
-            <p><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></p>
-          </div>
-      </div>
-   </div>
 </div>
 
 <div class="city-item">
@@ -52,161 +22,19 @@
     </div>
 
     <!-- beijing -->
-      <div class="row" style="margin: 20px 0px;">
-        <div class="col-md-3 text-center">
-          <a href="/jobs?workplace=北京">
-            <img class="img-circle" src="<%= image_url 'beijing.jpg' %>" alt="北京">
-          </a>
-       </div>
+    <%= render "beijing" %>
+    <!-- beijing -->
 
-      <div class="col-md-9" style="margin: 20px 0px;">
-       <table class="table table-hover">
-         <thead>
-             <tr>
-                 <td class="col-md-1">招聘职位</td>
-                 <td class="col-md-1">收藏</td>
-                 <td class="col-md-1">点赞</td>
-                 <td class="col-md-1">城市</td>
-                 <td class="col-md-1">薪资下限</td>
-                 <td class="col-md-1">薪资上限</td>
-                 <td class="col-md-1">刊登时间</td>
-             </tr>
-         </thead>
-         <tbody>
-         <% @bj.each do |job| %>
-         <tr>
-           <td><%= link_to(job.title, job_path(job)) %></td>
-           <td><%= render_member_status(job) %></td>
-           <td>
-             <%= job.voters.count %>
-             <%= render_voter_status(job) %>
-           </td>
-           <td><%= job.workplace.name %></td>
-           <td><%= job.wage_lower_bound %></td>
-           <td><%= job.wage_upper_bound %></td>
-           <td><%= job.created_at %></td>
-         </tr>
-         <% end %>
-         </tbody>
-       </table>
+    <!-- shenzhen -->
+    <%= render "shenzhen" %>
+    <!-- shenzhen -->
 
-     </div>
-    </div>
-  <!-- beijing -->
+    <!-- shanghai -->
+    <%= render "shanghai" %>
+    <!-- shanghai -->
 
-
-  <!-- shenzhen -->
-    <div class="row" style="margin: 20px 0px;">
-      <div class="col-md-3 text-center">
-        <a href="/jobs?workplace=深圳">
-          <img class="img-circle" src="<%= image_url 'shenzhen.jpg' %>" alt="深圳">
-        </a>
-     </div>
-
-    <div class="col-md-9">
-      <table class="table table-hover">
-        <thead>
-           <tr>
-             <td class="col-md-1">招聘职位</td>
-             <td class="col-md-1">城市</td>
-             <td class="col-md-1">薪资下限</td>
-             <td class="col-md-1">薪资上限</td>
-             <td class="col-md-1">刊登时间</td>
-           </tr>
-       </thead>
-       <tbody>
-       <% @sz.each do |job| %>
-             <tr>
-               <td><%= link_to(job.title, job_path(job)) %></td>
-               <td><%= job.workplace.name %></td>
-               <td><%= job.wage_lower_bound %></td>
-               <td><%= job.wage_upper_bound %></td>
-               <td><%= job.created_at %></td>
-             </tr>
-             <% end %>
-      </tbody>
-     </table>
-
-    </div>
-   </div>
-<!-- shenzhen -->
-
-
-<!-- shanghai -->
-    <div class="row" style="margin: 20px 0px;">
-      <div class="col-md-3 text-center">
-        <a href="/jobs?workplace=上海">
-          <img class="img-circle" src="<%= image_url 'shanghai.jpg' %>" alt="上海">
-        </a>
-     </div>
-
-    <div class="col-md-9">
-      <table class="table table-hover">
-        <thead>
-           <tr>
-             <td class="col-md-1">招聘职位</td>
-             <td class="col-md-1">城市</td>
-             <td class="col-md-1">薪资下限</td>
-             <td class="col-md-1">薪资上限</td>
-             <td class="col-md-1">刊登时间</td>
-           </tr>
-       </thead>
-       <tbody>
-       <% @sh.each do |job| %>
-             <tr>
-               <td><%= link_to(job.title, job_path(job)) %></td>
-               <td><%= job.workplace.name %></td>
-               <td><%= job.wage_lower_bound %></td>
-               <td><%= job.wage_upper_bound %></td>
-               <td><%= job.created_at %></td>
-             </tr>
-             <% end %>
-      </tbody>
-     </table>
-
-    </div>
-    </div>
-<!-- shanghai -->
-
-
-
-<!-- hangzhou -->
-    <div class="row" style="margin: 20px 0px;">
-      <div class="col-md-3 text-center">
-        <a href="/jobs?workplace=杭州">
-          <img class="img-circle" src="<%= image_url 'hangzhou.jpg' %>" alt="杭州">
-        </a>
-     </div>
-
-    <div class="col-md-9">
-      <table class="table table-hover">
-        <thead>
-           <tr>
-             <td class="col-md-1">招聘职位</td>
-             <td class="col-md-1">城市</td>
-             <td class="col-md-1">薪资下限</td>
-             <td class="col-md-1">薪资上限</td>
-             <td class="col-md-1">刊登时间</td>
-           </tr>
-       </thead>
-       <tbody>
-       <% @hz.each do |job| %>
-             <tr>
-               <td><%= link_to(job.title, job_path(job)) %></td>
-               <td><%= job.workplace.name %></td>
-               <td><%= job.wage_lower_bound %></td>
-               <td><%= job.wage_upper_bound %></td>
-               <td><%= job.created_at %></td>
-             </tr>
-             <% end %>
-      </tbody>
-     </table>
-
-
-    </div>
-    </div>
-<!-- hangzhou -->
-
-
- </div>
+    <!-- hangzhou -->
+    <%= render "hangzhou" %>
+    <!-- hangzhou -->
+  </div>
 </div>
