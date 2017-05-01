@@ -15,22 +15,11 @@
                <td class="col-md-1">城市</td>
                <td class="col-md-1">薪资下限</td>
                <td class="col-md-1">薪资上限</td>
+               <td class="col-md-1">刊登时间</td>
            </tr>
        </thead>
        <tbody>
-       <% @bj.each do |job| %>
-       <tr>
-         <td><%= link_to(job.title, job_path(job)) %></td>
-         <td><%= render_member_status(job) %></td>
-         <td>
-           <%= job.voters.count %>
-           <%= render_voter_status(job) %>
-         </td>
-         <td><%= job.workplace.name %></td>
-         <td><%= job.wage_lower_bound %></td>
-         <td><%= job.wage_upper_bound %></td>
-       </tr>
-       <% end %>
+         <%= render :partial => "city_item", :collection => @hit, :as => :job %>
        </tbody>
      </table>
 
