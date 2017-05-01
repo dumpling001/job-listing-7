@@ -11,14 +11,14 @@ puts "这个seeds文件可以自动建立一个admin账号，并且创建20个pu
 create_account = User.create([email: 'example@gmail.com', password:'123456', password_confirmation: '123456', is_admin: 'true'])
 puts "Admin account created."
 
-Workplace.create(name: “北京”)
-Workplace.create(name: “深圳”)
-Workplace.create(name: “上海”)
-Workplace.create(name: “杭州”)
-Workplace.create(name: “广州”)
-Workplace.create(name: “成都”)
-Workplace.create(name: “南京”)
-Workplace.create(name: “西安”)
+Workplace.create(name: "北京")
+Workplace.create(name: "深圳")
+Workplace.create(name: "上海")
+Workplace.create(name: "杭州")
+Workplace.create(name: "广州")
+Workplace.create(name: "成都")
+Workplace.create(name: "南京")
+Workplace.create(name: "西安")
 
 @user = User.find_by(:email => "example@gmail.com")
 
