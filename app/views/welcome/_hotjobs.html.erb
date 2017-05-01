@@ -1,12 +1,12 @@
 <!-- hot jobs -->
-    <div class="row" style="margin: 20px 0px">
+    <div class="row" id="hotjobs" style="margin: 20px 0px">
       <div class="col-xs-1">
         <a href="#">
         </a>
      </div>
 
     <div class="col-xs-9">
-      <div class="panel panel-default">
+      <div class="panel panel-default" id="hiddenpanel">
       <!-- Default panel contents -->
         <div class="panel-heading" style="background-color: rgba(217, 237 ,247, 0.99);">
           <h1>Ruby梦想手绘站</h1>
@@ -14,32 +14,37 @@
         <div class="panel-body" style="background-color: rgba(217, 237 ,247, 0.99);">
           <p>专为初创和中小型企业而设计的Ruby工程师招聘平台。</p>
         </div>
-           <table class="table table-default">
-       <thead>
-           <tr>
-               <td class="col-xs-2">招聘职位</td>
-               <td class="col-xs-1">收藏</td>
-               <td class="col-xs-1">点赞</td>
-               <td class="col-xs-1">城市</td>
-               <td class="col-xs-1">挑战薪资</td>
-           </tr>
-       </thead>
-       <tbody>
 
-       <% @hit.each do |job| %>
-         <tr>
-           <td><%= link_to(job.title, job_path(job)) %></td>
-           <td><%= render_member_status(job) %></td>
-           <td>
-             <%= job.voters.count %>
-             <%= render_voter_status(job) %>
-           </td>
-           <td><%= job.workplace.name %></td>
-           <td><%= job.wage_upper_bound %></td>
-         </tr>
-      <% end %>
-       </tbody>
-     </table>
+        <div class="pull-right" id="hiddenbutton">
+          <h1><a class="btn btn-lg btn-danger" href="/jobs" role="button">查看全部工作</a></h1>
+        </div>
+
+        <table class="table table-default">
+           <thead>
+               <tr>
+                   <td class="col-xs-2">招聘职位</td>
+                   <td class="col-xs-1">收藏</td>
+                   <td class="col-xs-1">点赞</td>
+                   <td class="col-xs-1">城市</td>
+                   <td class="col-xs-1">挑战薪资</td>
+               </tr>
+           </thead>
+           <tbody>
+
+           <% @hit.each do |job| %>
+             <tr>
+               <td><%= link_to(job.title, job_path(job)) %></td>
+               <td><%= render_member_status(job) %></td>
+               <td>
+                 <%= job.voters.count %>
+                 <%= render_voter_status(job) %>
+               </td>
+               <td><%= job.workplace.name %></td>
+               <td><%= job.wage_upper_bound %></td>
+             </tr>
+          <% end %>
+           </tbody>
+       </table>
 
     </div>
   </div>

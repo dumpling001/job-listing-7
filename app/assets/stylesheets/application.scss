@@ -55,10 +55,6 @@
   border-radius: 0px;
 }
 
-.panel {
-  background-color: rgba(56, 14 ,14, 0.28);
-}
-
 .panel-body {
 
   p{
@@ -80,6 +76,52 @@
     left: 30%;
     right: 5%;
     padding-top: 30px;
+}
+
+#hiddenbutton {
+  visibility: hidden;
+  height: 0px;
+}
+
+#hiddenpanel {
+  background-color: rgba(56, 14 ,14, 0.28)
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .carousel-inner img {
+    min-height: 150%;
+  }
+    .carousel-caption {
+      width: 80%;
+      top: 0px;
+    }
+
+    .panel-heading h1 {
+      font-size: 200%;
+    }
+
+    .panel-body p {
+      font-size: 100%;
+    }
+
+    #hotjobs table {
+      visibility: hidden;
+    }
+
+    .carousel-caption p {
+      margin-left: 0px;
+      margin-bottom: 0px;
+    }
+
+    #hiddenbutton {
+      visibility: visible;
+    }
+
+    #hiddenpanel {
+      background-color: rgba(231, 174, 0, 1);
+      border: 0px;
+    }
 }
 
 .carousel-inner img {
