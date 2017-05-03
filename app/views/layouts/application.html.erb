@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <title>Ruby梦想手绘站</title>
+     <title>成长记录分享站</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,15 +10,11 @@
   </head>
 
   <body>
-    <div class="main">
-      <div class="container-fluid">
-        <div class="row">
+
            <%= render "common/navbar" %>
            <%= render "common/flashes" %>
            <%= yield%>
-           </div>
-       </div>
-    </div>
+
 
          <%= render "common/footer" %>
 
